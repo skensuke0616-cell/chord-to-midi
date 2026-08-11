@@ -1,0 +1,461 @@
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap');
+
+        :root {
+  --bg: #14161c;
+  --bg-panel: #1b1e27;
+  --bg-cell: #21252f;
+  --bg-cell-hover: #262b37;
+  --border: #2e3341;
+  --border-soft: #262a35;
+  --text: #ede9e0;
+  --text-muted: #8b90a3;
+  --text-faint: #565b6c;
+  --accent: #5fbfae;
+  --accent-dim: #3d7f74;
+  --accent-amber: #e8a857;
+  --accent-red: #e2685c;
+  --radius: 10px;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sans: 'IBM Plex Sans JP', 'Hiragino Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100%;
+  padding: 28px 20px 60px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+* { box-sizing: border-box; }
+
+a { color: var(--accent); }
+a:hover { color: #71c9ba; }
+
+.c2m-page-wrap { max-width: 760px; margin: 0 auto; }
+
+.c2m-nav {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.c2m-nav a {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  transition: all 0.15s;
+}
+.c2m-nav a:hover { color: var(--text); border-color: var(--text-faint); }
+
+.c2m-lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+.c2m-lang-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 4px 2px;
+  transition: color 0.15s;
+}
+.c2m-lang-toggle button.active { color: var(--accent); font-weight: 600; }
+.c2m-lang-toggle button:hover:not(.active) { color: var(--text-muted); }
+.c2m-lang-sep { color: var(--border); }
+
+.c2m-prose h1 {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.c2m-prose .lead { color: var(--text-muted); font-size: 14.5px; margin: 0 0 28px; line-height: 1.7; }
+.c2m-prose h2 {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--accent);
+  margin: 34px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.c2m-prose p { font-size: 14px; line-height: 1.8; color: var(--text); margin: 0 0 10px; }
+.c2m-prose code {
+  font-family: var(--mono);
+  background: var(--bg-cell);
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 13px;
+}
+.c2m-prose pre {
+  font-family: var(--mono);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 0 0 14px;
+}
+.c2m-prose ul { margin: 0 0 12px; padding-left: 20px; }
+.c2m-prose li { font-size: 14px; line-height: 1.8; margin-bottom: 4px; }
+.c2m-prose .callout {
+  background: rgba(95,191,174,0.06);
+  border: 1px solid var(--accent-dim);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+.c2m-back-link {
+  display: inline-block;
+  margin-top: 36px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+                .c2m-wrap { max-width: 760px; margin: 0 auto; }
+
+        .c2m-header { margin-bottom: 24px; }
+        .c2m-eyebrow {
+          font-family: var(--mono);
+          font-size: 11px;
+          letter-spacing: 0.18em;
+          color: var(--accent);
+          text-transform: uppercase;
+          margin: 0 0 6px;
+        }
+        .c2m-title {
+          font-family: var(--mono);
+          font-weight: 700;
+          font-size: 28px;
+          letter-spacing: -0.01em;
+          margin: 0;
+          display: flex;
+          align-items: baseline;
+          gap: 10px;
+        }
+        .c2m-title span { color: var(--text-muted); font-weight: 400; font-size: 20px; }
+        .c2m-sub {
+          margin: 8px 0 0;
+          font-size: 13.5px;
+          color: var(--text-muted);
+          line-height: 1.6;
+        }
+
+        .c2m-panel {
+          background: var(--bg-panel);
+          border: 1px solid var(--border-soft);
+          border-radius: var(--radius);
+          padding: 16px;
+          margin-bottom: 16px;
+        }
+
+        .c2m-global-settings-title {
+          font-family: var(--mono);
+          font-size: 10.5px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--accent);
+          margin: 0 0 10px;
+        }
+        .c2m-global-settings-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-end; }
+        .c2m-pitch-shift-hint {
+          margin: 10px 0 0;
+          font-size: 12px;
+          color: var(--text-faint);
+          line-height: 1.6;
+        }
+        .c2m-toggle-btn {
+          background: var(--bg-cell);
+          border: 1px solid var(--border);
+          color: var(--text-muted);
+          border-radius: 6px;
+          padding: 8px 14px;
+          font-family: var(--mono);
+          font-size: 13px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.15s;
+          min-width: 64px;
+        }
+        .c2m-toggle-btn.on {
+          background: var(--accent);
+          color: #0e2320;
+          border-color: var(--accent);
+        }
+        .c2m-toggle-btn:hover:not(.on) { border-color: var(--text-faint); color: var(--text); }
+
+        .c2m-meta-hint { color: var(--text-muted); }
+        .c2m-field { display: flex; flex-direction: column; gap: 6px; }
+        .c2m-field label {
+          font-family: var(--mono);
+          font-size: 10.5px;
+          letter-spacing: 0.1em;
+          color: var(--text-faint);
+          text-transform: uppercase;
+        }
+        .c2m-select, .c2m-input {
+          background: var(--bg-cell);
+          border: 1px solid var(--border);
+          color: var(--text);
+          border-radius: 6px;
+          padding: 8px 10px;
+          font-family: var(--mono);
+          font-size: 14px;
+          outline: none;
+          transition: border-color 0.15s;
+        }
+        .c2m-select:focus, .c2m-input:focus { border-color: var(--accent); }
+        .c2m-input { width: 76px; }
+
+        .c2m-tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid var(--border-soft); }
+        .c2m-tab {
+          display: flex; align-items: center; gap: 6px;
+          background: transparent;
+          border: none;
+          color: var(--text-muted);
+          font-family: var(--sans);
+          font-weight: 600;
+          font-size: 13.5px;
+          padding: 10px 14px;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          margin-bottom: -1px;
+        }
+        .c2m-tab.active { color: var(--text); border-bottom-color: var(--accent); }
+        .c2m-tab:hover:not(.active) { color: var(--text); }
+
+        .c2m-method-toggle {
+          display: inline-flex;
+          gap: 2px;
+          background: var(--bg-cell);
+          border: 1px solid var(--border);
+          border-radius: 999px;
+          padding: 3px;
+          margin-bottom: 14px;
+        }
+        .c2m-method-toggle button {
+          background: transparent;
+          border: none;
+          color: var(--text-muted);
+          font-family: var(--sans);
+          font-weight: 600;
+          font-size: 12.5px;
+          padding: 7px 14px;
+          border-radius: 999px;
+          cursor: pointer;
+          transition: all 0.15s;
+        }
+        .c2m-method-toggle button.active { background: var(--accent); color: #0e2320; }
+        .c2m-method-toggle button:hover:not(.active) { color: var(--text); }
+
+        .c2m-steps { display: flex; flex-direction: column; gap: 10px; }
+
+        .c2m-card {
+          background: var(--bg-cell);
+          border: 1px solid var(--border);
+          border-radius: var(--radius);
+          padding: 12px 14px 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          transition: box-shadow 0.2s, border-color 0.2s;
+          position: relative;
+        }
+        .c2m-card.playing { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 16px -4px var(--accent); }
+
+        .c2m-card-top {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
+        .c2m-step-num {
+          font-family: var(--mono);
+          font-size: 11px;
+          color: var(--bg);
+          background: var(--text-faint);
+          width: 22px; height: 22px;
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          flex-shrink: 0;
+        }
+        .c2m-card.playing .c2m-step-num { background: var(--accent); }
+
+        .c2m-card-controls { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; align-items: center; min-width: 200px; }
+        .c2m-card-actions { display: flex; gap: 4px; margin-left: auto; align-items: center; }
+
+        /* 実際に鳴るコード名 ── カード内で最も視認性を優先する要素。
+           ルート音・コードタイプ・拍数のセレクトより大きく／濃いコントラストで表示する。 */
+        .c2m-chord-display {
+          font-family: var(--mono);
+          font-weight: 700;
+          font-size: 22px;
+          letter-spacing: 0.01em;
+          color: var(--text);
+          text-align: center;
+          padding-top: 10px;
+          margin-top: 8px;
+          border-top: 1px dashed var(--border-soft);
+        }
+        .c2m-chord-display.on-chord { color: var(--accent-amber); }
+
+        .c2m-icon-btn {
+          background: transparent;
+          border: 1px solid var(--border);
+          color: var(--text-muted);
+          border-radius: 6px;
+          width: 30px; height: 30px;
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer;
+          transition: all 0.15s;
+          flex-shrink: 0;
+        }
+        .c2m-icon-btn:hover { color: var(--text); border-color: var(--text-faint); background: var(--bg-cell-hover); }
+        .c2m-icon-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .c2m-icon-btn.danger:hover { color: var(--accent-red); border-color: var(--accent-red); }
+        .c2m-icon-btn.accent { color: var(--accent); border-color: var(--accent-dim); }
+
+        .c2m-advanced {
+          width: 100%;
+          margin-top: 10px;
+          padding-top: 10px;
+          border-top: 1px dashed var(--border);
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .c2m-advanced-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        .c2m-oncho-hint {
+          margin: 0;
+          font-size: 12.5px;
+          line-height: 1.7;
+          color: var(--text-muted);
+          background: rgba(95,191,174,0.06);
+          border: 1px solid var(--accent-dim);
+          border-radius: 8px;
+          padding: 9px 12px;
+        }
+        .c2m-oncho-hint strong {
+          color: var(--accent-amber);
+          font-family: var(--mono);
+          font-weight: 700;
+        }
+
+        .c2m-add-btn {
+          display: flex; align-items: center; justify-content: center; gap: 8px;
+          background: transparent;
+          border: 1px dashed var(--border);
+          color: var(--text-muted);
+          border-radius: var(--radius);
+          padding: 12px;
+          font-family: var(--sans);
+          font-weight: 600;
+          font-size: 13.5px;
+          cursor: pointer;
+          transition: all 0.15s;
+        }
+        .c2m-add-btn:hover { color: var(--accent); border-color: var(--accent-dim); background: rgba(95,191,174,0.05); }
+
+        .c2m-transport {
+          display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+          margin-top: 18px;
+        }
+        .c2m-btn {
+          display: flex; align-items: center; gap: 8px;
+          font-family: var(--sans);
+          font-weight: 600;
+          font-size: 14px;
+          border-radius: 8px;
+          padding: 11px 18px;
+          cursor: pointer;
+          border: 1px solid transparent;
+          transition: all 0.15s;
+        }
+        .c2m-btn-primary { background: var(--accent); color: #0e2320; }
+        .c2m-btn-primary:hover { background: #71c9ba; }
+        .c2m-btn-primary:disabled { background: var(--text-faint); color: var(--bg); cursor: not-allowed; }
+        .c2m-btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
+        .c2m-btn-ghost:hover { border-color: var(--text-faint); }
+        .c2m-btn-amber { background: var(--accent-amber); color: #2b1c05; margin-left: auto; }
+        .c2m-btn-amber:hover { background: #f0b876; }
+        .c2m-btn-amber:disabled { background: var(--text-faint); color: var(--bg); cursor: not-allowed; }
+
+        .c2m-meta { font-family: var(--mono); font-size: 11.5px; color: var(--text-faint); margin-top: 10px; }
+
+        .c2m-textarea {
+          width: 100%;
+          min-height: 160px;
+          background: var(--bg-cell);
+          border: 1px solid var(--border);
+          color: var(--text);
+          border-radius: 8px;
+          padding: 12px;
+          font-family: var(--mono);
+          font-size: 14px;
+          line-height: 1.7;
+          resize: vertical;
+          outline: none;
+        }
+        .c2m-textarea:focus { border-color: var(--accent); }
+        .c2m-text-example {
+          font-family: var(--mono);
+          font-size: 11.5px;
+          color: var(--text-faint);
+          margin: 8px 0 12px;
+          line-height: 1.6;
+        }
+        .c2m-error {
+          display: flex; gap: 8px;
+          background: rgba(226,104,92,0.08);
+          border: 1px solid rgba(226,104,92,0.35);
+          color: #f0a99f;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-size: 13px;
+          line-height: 1.6;
+          white-space: pre-wrap;
+          margin-top: 10px;
+        }
+        .c2m-empty {
+          text-align: center;
+          padding: 30px 10px;
+          color: var(--text-faint);
+          font-size: 13.5px;
+        }
+
+        @media (max-width: 560px) {
+          .c2m-card-top { flex-direction: column; align-items: stretch; }
+          .c2m-card-controls {
+            flex-direction: column;
+            align-items: stretch;
+            min-width: 0;
+          }
+          .c2m-card-controls .c2m-select {
+            width: 100%;
+            flex: none;
+            padding: 11px 12px;
+            font-size: 15px;
+          }
+          .c2m-chord-display { font-size: 19px; }
+          .c2m-card-actions { margin-left: 0; justify-content: flex-end; }
+          .c2m-btn-amber { margin-left: 0; width: 100%; justify-content: center; }
+        }
